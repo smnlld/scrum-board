@@ -1,5 +1,13 @@
 import React from "react";
 
 export const Header = () => {
-  return <h2>SCRUM BOARD </h2>;
+  return (
+    <>
+      <h1>SCRUM BOARD </h1>
+      <button> Add New Event</button>
+      <p>
+        <h8>Simon Ullado</h8>
+      </p>
+    </>
+  );
 };
