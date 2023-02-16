@@ -5,9 +5,7 @@ export const Header = () => {
     <>
       <h1>SCRUM BOARD </h1>
       <button> Add New Event</button>
-      <p>
-        <h8>Simon Ullado</h8>
-      </p>
+      <p>Simon Ullado</p>
     </>
   );
 };
