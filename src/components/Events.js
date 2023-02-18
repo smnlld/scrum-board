@@ -1,5 +1,5 @@
 import Event from "./Event";
-const Events = ( event ) => {
+const Events = ( {event} ) => {
   return (
     <>
       {event.map((event) => (
