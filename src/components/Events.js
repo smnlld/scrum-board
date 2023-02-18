@@ -2,7 +2,7 @@ import Event from "./Event";
 const Events = ( event ) => {
   return (
     <>
-      {event.map((info) => (
+      {event.map((event) => (
         <Event key={event.id} event={event} />
       ))}
     </>

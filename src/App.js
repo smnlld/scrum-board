@@ -6,10 +6,11 @@ import "./App.css";
 //Components imports
 import { Header } from "./components/Header";
 import Event  from "./components/Event";
+import Events from "./components/Events";
 
 
-function App() {
-  const [event,setEvents] = useState([
+const App = () => {
+  const [events,setEvents] = useState([
   {
     ID: 1,
     Title: "Event 1",
@@ -34,9 +35,9 @@ function App() {
 
     <div className="App">
       <Header />
-      <Event event={event} />
-      {event.length > 0 ? (
-        <Event event={event}/>
+      <Events event={events} />
+      {events.length > 0 ? (
+        <Events event={events}/>
       ) : (
         "No infos to show"
       )}
