@@ -35,9 +35,9 @@ const App = () => {
 
     <div className="App">
       <Header />
-      <Events event={events} />
+      <Event events={events} />
       {events.length > 0 ? (
-        <Events event={events}/>
+        <Event events={events}/>
       ) : (
         "No infos to show"
       )}
