@@ -27,6 +27,11 @@
 .App-link {
   color: #61dafb;
 }
+.table-main{
+  width: 100%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
 
 @keyframes App-logo-spin {
   from {
