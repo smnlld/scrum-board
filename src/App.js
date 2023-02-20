@@ -7,6 +7,7 @@ import "./App.css";
 import { Header } from "./components/Header";
 import Event from "./components/Event";
 import Events from "./components/Events";
+import ToDo from "./components/ToDo";
 
 const App = () => {
   const [events, setEvents] = useState([
@@ -30,6 +31,24 @@ const App = () => {
     },
   ]);
 
+  const toDoEvents = (e) => {
+    const { title, description, status } = e.target.value;
+    setEvents(toDoEvents, title, description, status);
+  };
+
+  //code for changing status
+  const statusEvents =(id,newStatus) => {
+    let backlog = events;
+    backlog=backlog.map(event => event=>{
+      if(event.id === id){
+        console.log('event')
+        event.status = newStatus
+      }
+      return event;
+    })
+    setEvents(backlog)
+  }
+
   //functionalities
   // const toDoEvents = (e) => {
   //   console.log(e.target.value);
@@ -48,6 +67,7 @@ const App = () => {
         <h1>THIS IS THE EVENTS</h1>
         <Events event={events} />
       </div>
+      <ToDo/>
     </div>
   );
 };
