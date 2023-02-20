@@ -31,6 +31,12 @@ const App = () => {
   ]);
 
   //functionalities
+  // const toDoEvents = (e) => {
+  //   console.log(e.target.value);
+  // };
+  //   const {id, title, description, status} = e.target.value;
+  //   setEvents([...events, {id, title, description, status}]);
+  // };
 // oncClickHandler = function (e) {
 //   console.log(e.target.value);
 // };
