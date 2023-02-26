@@ -1,16 +1,28 @@
 import React, { useState } from "react";
 
-const Event = ({ event, toDoEvents }) => {
-  
+const Event = ({ event ,addNewEvent}) => {
+  const toDoEvents = () => {
+    console.log(addNewEvent);
+  };
+
+  // setInfos(infos.filter((info) => info.id !== id));
   return (
+    <>
+    {event.map((event) => (
     <div className="container">
-      <div className="table-main">
-        <h3>{event.Title}</h3>
+      <div>
+      <h3>{event.Title}</h3>
         <p>{event.Description}</p>
         <p>{event.Status}</p>
-        <p><button onClick={toDoEvents}>TO DO</button></p>x
+        <p>
+          <button onClick={addNewEvent}>TO DO</button>
+        </p>
       </div>
     </div>
+  )
+  )}
+  </>
   );
 };
+
 export default Event;
