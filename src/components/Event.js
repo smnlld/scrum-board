@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-const Event = ({ event ,addNewEvent}) => {
+const Event = ({ event ,statusUpdate}) => {
   const toDoEvents = () => {
-    console.log(addNewEvent);
+    console.log(statusUpdate);
   };
 
   // setInfos(infos.filter((info) => info.id !== id));
@@ -15,7 +15,7 @@ const Event = ({ event ,addNewEvent}) => {
         <p>{event.Description}</p>
         <p>{event.Status}</p>
         <p>
-          <button onClick={addNewEvent}>TO DO</button>
+          <button onClick={statusUpdate}>TO DO</button>
         </p>
       </div>
     </div>

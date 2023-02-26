@@ -32,26 +32,32 @@ const App = () => {
   ]);
   const addNewEvent = (event) => {
     const id = Math.floor(Math.random() * 10000) + 1;
-    const newEvent = { id, ...event.Status === "New Event" ? event.Status: "To Do" };
+    const newEvent = {
+      id,
+      ...(event.Status === "New Event" ? event.Status : "To Do"),
+    };
     setEvents([...events, newEvent]);
   };
-  // const addInfo = (info) => {
-  //   const id = Math.floor(Math.random() * 10000) + 1;
-  //   const newInfo = { id, ...info };
-  //   setInfos([...infos, newInfo]);
-  // };
-  // const deleteInfo = (id) => {
-  //   setInfos(infos.filter((info) => info.id !== id));
-  // };
+
+  const statusUpdate = (id, newStatus) => {
+    let theEvents = events;
+    theEvents = theEvents.map((events) => {
+      if (events.ID === id) {
+        console.log("event");
+        events.Status = newStatus;
+      }
+      return events;
+    });
+    setEvents(theEvents);
+  };
   return (
     <div className="App">
       <Header />
       <div className="table-main">
         <h1>THIS IS THE EVENTS</h1>
-        <Event event={events} addNewEvent={addNewEvent} />
+        <Event event={events} statusUpdate={statusUpdate} />
       </div>
-      {/* <ToDo event={setEvents} onClick={oncClickHandler}/>   */}
-      {/* <ToDo event={events} setEvents={setEvents} statusEvents={statusEvents} /> */}
+      <ToDo event={events} statusUpdate={statusUpdate} />
     </div>
   );
 };
@@ -83,3 +89,11 @@ export default App;
 
 // const { id, title, description, status } = e.target.value;
 // setEvents([...events, events, id, title, description, status]);
+// const addInfo = (info) => {
+//   const id = Math.floor(Math.random() * 10000) + 1;
+//   const newInfo = { id, ...info };
+//   setInfos([...infos, newInfo]);
+// };
+// const deleteInfo = (id) => {
+//   setInfos(infos.filter((info) => info.id !== id));
+// };
