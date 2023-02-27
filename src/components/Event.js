@@ -7,9 +7,9 @@ const Event = ({ event ,statusUpdate}) => {
 
   // setInfos(infos.filter((info) => info.id !== id));
   return (
-    <>
+    <> 
     {event.map((event) => (
-    <div className="container">
+    <div className="container" >
       <div>
       <h3>{event.Title}</h3>
         <p>{event.Description}</p>

@@ -1,11 +1,11 @@
 import React from "react";
 
-const ToDo = ({ events, statusUpdate, setEvents }) => {
+const ToDo = ({ event, events, statusUpdate, setEvents }) => {
   return (
     <div>
       {
         events && events.map(event => {
-          if (event && event.status === 'To Do') 
+          if (event && event.status === 'New Status') 
           return <> <h3>{event.Title}</h3>
           <p>{event.Description}</p>
           <p>{event.Status}</p>

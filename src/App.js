@@ -30,16 +30,17 @@ const App = () => {
       Status: "New Event",
     },
   ]);
-  const addNewEvent = (event) => {
-    const id = Math.floor(Math.random() * 10000) + 1;
-    const newEvent = {
-      id,
-      ...(event.Status === "New Event" ? event.Status : "To Do"),
-    };
-    setEvents([...events, newEvent]);
-  };
+  // const addNewEvent = (event) => {
+  //   const id = Math.floor(Math.random() * 10000) + 1;
+  //   const newEvent = {
+  //     id,
+  //     ...(event.Status === "New Event" ? event.Status : "To Do"),
+  //   };
+  //   setEvents([...events, newEvent]);
+  // };
 
   const statusUpdate = (id, newStatus) => {
+    console.log(id, newStatus);
     let theEvents = events;
     theEvents = theEvents.map((events) => {
       if (events.ID === id) {
@@ -55,9 +56,9 @@ const App = () => {
       <Header />
       <div className="table-main">
         <h1>THIS IS THE EVENTS</h1>
-        <Event event={events} statusUpdate={statusUpdate} />
+        <Event event={events} statusUpdate={statusUpdate} setEvents={setEvents} />
       </div>
-      <ToDo event={events} statusUpdate={statusUpdate} />
+      <ToDo event={events} statusUpdate={statusUpdate} setEvents={setEvents}/>
     </div>
   );
 };
