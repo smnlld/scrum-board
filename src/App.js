@@ -40,7 +40,7 @@ const App = () => {
   // };
 
   const statusUpdate = (id, newStatus) => {
-    console.log(id, newStatus);
+    // console.log(id, newStatus);
     let theEvents = events;
     theEvents = theEvents.map((events) => {
       if (events.ID === id) {

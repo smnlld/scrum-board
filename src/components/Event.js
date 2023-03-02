@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
-const Event = ({ event ,statusUpdate}) => {
-  const toDoEvents = () => {
-    console.log(statusUpdate);
-  };
+// const Event = ({ event ,statusUpdate}) => {
+//   const toDoEvents = () => {
+//     console.log(statusUpdate);
+//   };
 
   // setInfos(infos.filter((info) => info.id !== id));
+const Event = ({ event ,statusUpdate}) => {
   return (
     <> 
     {event.map((event) => (
@@ -15,7 +16,7 @@ const Event = ({ event ,statusUpdate}) => {
         <p>{event.Description}</p>
         <p>{event.Status}</p>
         <p>
-          <button onClick={statusUpdate}>TO DO</button>
+          <button key={event.id} onClick={() => {statusUpdate(event.id, "New Event")}} >TO DO</button>
         </p>
       </div>
     </div>
