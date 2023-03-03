@@ -11,7 +11,7 @@ export const Items = () => {
       id: 1,
       title: "Event 1",
       description: "This is the first event",
-      status: "Todo",
+      status: "Pending",
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ export const Items = () => {
       id: 3,
       title: "Event 3",
       description: "This is the third event",
-      status: "Todo",
+      status: "Pending",
     },
   ]);
   const statusUpdate = (id, newStatus) => {

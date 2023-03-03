@@ -3,19 +3,19 @@ import React from "react";
 export const Pending = ({ events, statusUpdate, setEvents }) => {
   return (
     <>
-      <h1>NEW EVENTS</h1>
+    <div className="table-main">
+      <h1 >NEW EVENTS</h1>
       {events &&
         events.map((event) => {
           if (event && event.status === "Pending")
             return (
               <>
                 <div key={event.id} className="container">
-                  <h3>{event.title}</h3>
+                  <h2>{event.title}</h2>
                   <p>
                     {event.description}
-                    {event.status}
+                   <h3> {event.status}</h3>
                   </p>
-
                   <button
                     key={event.id}
                     onClick={() => {
@@ -28,6 +28,7 @@ export const Pending = ({ events, statusUpdate, setEvents }) => {
               </>
             );
         })}
+        </div>
     </>
   );
 };
