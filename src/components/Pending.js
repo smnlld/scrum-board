@@ -1,29 +1,29 @@
 import React from "react";
 
-export const ToDo = ({ events, statusUpdate, setEvents }) => {
+export const Pending = ({ events, statusUpdate, setEvents }) => {
   return (
     <>
-      <h1>TO DO</h1>
+      <h1>NEW EVENTS</h1>
       {events &&
         events.map((event) => {
-          if (event && event.status === "Todo")
+          if (event && event.status === "Pending")
             return (
               <>
-                <div className="container" key={event.id}>
+                <div key={event.id} className="container">
                   <h3>{event.title}</h3>
                   <p>
                     {event.description}
                     {event.status}
-                  
+                  </p>
+
                   <button
                     key={event.id}
                     onClick={() => {
-                      statusUpdate(event.id, "Pending");
+                      statusUpdate(event.id, "Todo");
                     }}
                   >
                     TO DO
                   </button>
-                  </p>
                 </div>
               </>
             );
@@ -32,3 +32,10 @@ export const ToDo = ({ events, statusUpdate, setEvents }) => {
   );
 };
 
+
+// const Event = ({ event ,statusUpdate}) => {
+//   const toDoEvents = () => {
+//     console.log(statusUpdate);
+//   };
+
+// setInfos(infos.filter((info) => info.id !== id));

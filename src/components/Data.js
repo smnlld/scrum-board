@@ -1,1 +1,0 @@
-[ {"id":1,"title":"Event1","description":"This is Event1","status":"Complete"}, {"id":1,"title":"Event1","description":"This is Event1","status":"Complete"}, {"id":1,"title":"Event1","description":"This is Event1","status":"Complete"} ]
