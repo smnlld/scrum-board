@@ -1,5 +1,5 @@
 import './App.css';
-import Items from './Items';
+import {Items} from './Items';
 
 function App() {
   return (
