@@ -24,7 +24,9 @@ export const Completed = ({ events, statusUpdate, setEvents, onDelete }) => {
                 </button>
                 <button
                   key={event.id}
-                  onDelete={onDelete}
+                  onClick={() => {
+                    onDelete(event.id);
+                  }}
                 >
                   Delete
                 </button>
