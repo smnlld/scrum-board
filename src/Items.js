@@ -58,6 +58,7 @@ export const Items = () => {
       </div>
       {showAddEvent && <AddEvent onAdd={addEvent} /> }
       <h1>THIS IS THE EVENTS</h1>
+
       <Pending
         events={events}
         statusUpdate={statusUpdate}
