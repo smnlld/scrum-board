@@ -1,12 +1,14 @@
 import React from "react";
 
 export const Pending = ({ events, statusUpdate, setEvents }) => {
+  const newFunction = (events)=> {
+    newFunction = (statusUpdate);
+  }
   return (
     <>
-    <div className="table-main">
-      <h1 >NEW EVENTS</h1>
-      {events &&
-        events.map((event) => {
+      <div className="table-main">
+        <h1>NEW EVENTS</h1>
+        {events?.map((event) => {
           if (event && event.status === "Pending")
             return (
               <>
@@ -14,13 +16,14 @@ export const Pending = ({ events, statusUpdate, setEvents }) => {
                   <h2>{event.title}</h2>
                   <p>
                     {event.description}
-                   <h3> {event.status}</h3>
+                    <h3> {event.status}</h3>
                   </p>
                   <button
                     key={event.id}
                     onClick={() => {
                       statusUpdate(event.id, "Todo");
                     }}
+                    
                   >
                     TO DO
                   </button>
@@ -28,15 +31,14 @@ export const Pending = ({ events, statusUpdate, setEvents }) => {
               </>
             );
         })}
-        </div>
+      </div>
     </>
   );
 };
 
-
 // const Event = ({ event ,statusUpdate}) => {
 //   const toDoEvents = () => {
-//     console.log(statusUpdate);
+//     console.log(statusUpdate); onClick={statusUpdate}
 //   };
 
 // setInfos(infos.filter((info) => info.id !== id));

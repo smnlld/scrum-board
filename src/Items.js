@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Header } from "./components/Header";
 import {Pending} from "./components/Pending";
 import {ToDo} from "./components/ToDo";
+import {Completed} from "./components/Completed";
 
 export const Items = () => {
   const [events, setEvents] = useState([
@@ -49,8 +50,11 @@ export const Items = () => {
           statusUpdate={statusUpdate}
           setEvents={setEvents}
         />
-      <ToDo event={events} statusUpdate={statusUpdate} setEvents={setEvents} />
-    </div>
+        
+      <ToDo events={events} statusUpdate={statusUpdate} setEvents={setEvents} />
+      <Completed events={events} statusUpdate={statusUpdate} setEvents={setEvents} />
+      </div>
+    
   );
 };
 export default Items;
