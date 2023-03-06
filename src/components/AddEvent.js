@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const AddEvent = ({ onAdd }) => {
+export const AddEvent = ({ onAdd }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("");
@@ -12,7 +12,6 @@ const AddEvent = ({ onAdd }) => {
       return;
     }
     onAdd({ title, description, status });
-
     setTitle("");
     setDescription("");
     setStatus("");
@@ -51,5 +50,5 @@ const AddEvent = ({ onAdd }) => {
   );
 };
 
-export default AddEvent;
+
 

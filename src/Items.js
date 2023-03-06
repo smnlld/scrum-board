@@ -5,7 +5,7 @@ import { Header } from "./components/Header";
 import { Pending } from "./components/Pending";
 import { ToDo } from "./components/ToDo";
 import { Completed } from "./components/Completed";
-import AddEvent from "./components/AddEvent";
+import {AddEvent} from "./components/AddEvent";
 
 
 export const Items = () => {
@@ -58,12 +58,14 @@ export const Items = () => {
       </div>
       {showAddEvent && <AddEvent onAdd={addEvent} /> }
       <h1>THIS IS THE EVENTS</h1>
-
+      {events.length > 0 ? (
       <Pending
         events={events}
         statusUpdate={statusUpdate}
         setEvents={setEvents}
-      />
+      />) : (
+        "No events to show"
+      )}
       <ToDo events={events} statusUpdate={statusUpdate} setEvents={setEvents} />
       <Completed
         events={events}
