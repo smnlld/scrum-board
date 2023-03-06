@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export const AddEvent = ({ onAdd }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState("Pending");
 
   const onSubmit = (e) => {
     e.preventDefault();
