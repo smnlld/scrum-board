@@ -47,10 +47,18 @@ export const Items = () => {
 
   //Adding new Event to the list
   const addEvent = (event) => {
+    console.log(events);
     const id = Math.floor(Math.random() * 10000) + 1;
     const newEvent = { id, ...event };
     setEvents([...events, newEvent]);
   };
+
+  //Delete Event
+  const deleteEvent = (id) => {
+    console.log(events);
+    setEvents(events.filter((event) => event.id !== id));
+  };
+
   return (
     <div className="App">
       <div>
@@ -71,6 +79,7 @@ export const Items = () => {
         events={events}
         statusUpdate={statusUpdate}
         setEvents={setEvents}
+        onDelete={deleteEvent}
       />
     </div>
   );

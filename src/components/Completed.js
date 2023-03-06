@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Completed = ({ events, statusUpdate, setEvents }) => {
+export const Completed = ({ events, statusUpdate, setEvents, onDelete }) => {
   return (
     <div className="table-main">
       <h1>COMPLETED</h1>
@@ -21,6 +21,12 @@ export const Completed = ({ events, statusUpdate, setEvents }) => {
                   }}
                 >
                   Todo
+                </button>
+                <button
+                  key={event.id}
+                  onDelete={onDelete}
+                >
+                  Delete
                 </button>
               </div>
             </>

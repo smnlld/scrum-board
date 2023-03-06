@@ -14,7 +14,7 @@ export const AddEvent = ({ onAdd }) => {
     onAdd({ title, description, status });
     setTitle("");
     setDescription("");
-    setStatus("");
+    setStatus("Pending");
   };
   return (
     <form onSubmit={onSubmit}>
@@ -40,15 +40,13 @@ export const AddEvent = ({ onAdd }) => {
         <label>Status</label>
         <input
           type="text"
-          placeholder=" Add Status of Event "
+          placeholder="PENDING"
+          readOnly={true}
           value={status}
           onChange={(e) => setStatus(e.target.value)}
         />
       </div>
-        <input type="submit" value="Save Event" className="btn-submit" />
+      <input type="submit" value="Save Event" className="btn-submit" />
     </form>
   );
 };
-
-
-
