@@ -19,6 +19,7 @@ export const Pending = ({ events, statusUpdate, setEvents }) => {
                     <h3> {event.status}</h3>
                   </p>
                   <button
+                  className="btn btn-blue"
                     key={event.id}
                     onClick={() => {
                       statusUpdate(event.id, "Todo");
