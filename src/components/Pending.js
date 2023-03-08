@@ -19,7 +19,7 @@ export const Pending = ({ events, statusUpdate, setEvents }) => {
                     <h3> {event.status}</h3>
                   </p>
                   <button
-                    className="bg-green hover:bg-yellow text-white font-bold py-2 px-4 rounded "
+                    className="bg-blue-300 hover:bg-yellow text-white font-bold py-2 px-4 rounded "
                     key={event.id}
                     onClick={() => {
                       statusUpdate(event.id, "Todo");
