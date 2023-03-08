@@ -5,8 +5,7 @@ import { Header } from "./components/Header";
 import { Pending } from "./components/Pending";
 import { ToDo } from "./components/ToDo";
 import { Completed } from "./components/Completed";
-import {AddEvent} from "./components/AddEvent";
-
+import { AddEvent } from "./components/AddEvent";
 
 export const Items = () => {
   const [showAddEvent, setShowAddEvent] = useState(false);
@@ -60,31 +59,44 @@ export const Items = () => {
   };
 
   return (
-    <div className="App">
-      <div>
+    <div className=" mx-auto h-auto w-auto bg-red-100 max-h-full ">
+      <div className="sm:text-center ">
         <Header onAdd={() => setShowAddEvent(!showAddEvent)} />
       </div>
-      {showAddEvent && <AddEvent onAdd={addEvent} /> }
-      <h1>THIS IS THE EVENTS</h1>
-      {events.length > 0 ? (
-      <Pending
-        events={events}
-        statusUpdate={statusUpdate}
-        setEvents={setEvents}
-      />) : (
-        "No events to show"
-      )}
-      <ToDo events={events} statusUpdate={statusUpdate} setEvents={setEvents} />
-      <Completed
-        events={events}
-        statusUpdate={statusUpdate}
-        setEvents={setEvents}
-        onDelete={deleteEvent}
-      />
+      {showAddEvent && <AddEvent onAdd={addEvent} />}
+      <div className="mx-auto h-[400px] w-[500px] flex justify-center items-center bg-blue-500 relative p-[10px]">
+        <div className="static ...">
+          <div className="inline-block ...">
+            {events.length > 0 ? (
+              <Pending
+                events={events}
+                statusUpdate={statusUpdate}
+                setEvents={setEvents}
+              />
+            ) : (
+              "No events to show"
+            )}
+          </div>
+          <div className="inline-block ...">
+            <ToDo
+              events={events}
+              statusUpdate={statusUpdate}
+              setEvents={setEvents}
+            />
+          </div>
+          <div className="inline-block ...">
+            <Completed
+              events={events}
+              statusUpdate={statusUpdate}
+              setEvents={setEvents}
+              onDelete={deleteEvent}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
-
 
 // export default Items;
 // {showAddInfo && <AddInfo onAdd={addInfo} />}
