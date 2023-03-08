@@ -25,7 +25,7 @@ export const ToDo = ({ events, statusUpdate, setEvents }) => {
                 PENDING
               </button>
               <button
-              className="bg-green hover:bg-yellow text-white font-bold py-2 px-4 rounded"
+              className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 rounded"
                 key={event.id}
                 onClick={() => {
                   statusUpdate(event.id, "Completed");
