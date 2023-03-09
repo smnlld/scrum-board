@@ -17,36 +17,41 @@ export const AddEvent = ({ onAdd }) => {
     setStatus("Pending");
   };
   return (
-    <form onSubmit={onSubmit}>
-      <div className="form-body">
-        <label>TITLE</label>
-        <input
-          type="text"
-          placeholder=" Add Title of Event "
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
+    <form
+      onSubmit={onSubmit}
+      className="md:container items-center border border-blue-50 mx-auto w-0 text-align-center "
+    >
+      <div className="">
+        <div className="">
+          <label>TITLE</label>
+          <input
+            type="text"
+            placeholder=" Add Title of Event "
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
+        <div className="form-body">
+          <label>Description</label>
+          <input
+            type="text"
+            placeholder=" Add Description of Event "
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
+        <div className="form-body">
+          <label>Status</label>
+          <input
+            type="text"
+            placeholder="PENDING"
+            readOnly={true}
+            value={status}
+            onChange={(e) => setStatus(e.target.value)}
+          />
+        </div>
+        <input type="submit" value="Save Event" className="btn-submit" />
       </div>
-      <div className="form-body">
-        <label>Description</label>
-        <input
-          type="text"
-          placeholder=" Add Description of Event "
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-      </div>
-      <div className="form-body">
-        <label>Status</label>
-        <input
-          type="text"
-          placeholder="PENDING"
-          readOnly={true}
-          value={status}
-          onChange={(e) => setStatus(e.target.value)}
-        />
-      </div>
-      <input type="submit" value="Save Event" className="btn-submit" />
     </form>
   );
 };

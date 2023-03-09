@@ -31,8 +31,7 @@ export const Items = () => {
   ]);
 
   //Status Changer Function
-  const statusUpdate = (id, newStatus) => {
-    // console.log(id, newEvent);
+  const statusUpdate = (id, newStatus) => { 
     let updater = events;
     updater = updater.map((event) => {
       if (event.id === id) {
@@ -46,7 +45,6 @@ export const Items = () => {
 
   //Adding new Event to the list
   const addEvent = (event) => {
-    console.log(events);
     const id = Math.floor(Math.random() * 10000) + 1;
     const newEvent = { id, ...event };
     setEvents([...events, newEvent]);
@@ -58,15 +56,23 @@ export const Items = () => {
     setEvents(events.filter((event) => event.id !== id));
   };
 
+
+  //counters 
+    // let counters = events.length; 
+    // if (events.status === 'Pending'){
+    //   console.log(counters);
+    // }
+    // else if (events.status === 'Todo'){
+    //   console.log(counters);
   return (
-    <div className=" mx-auto h-auto w-auto bg-red-100 max-h-full ">
-      <div className="sm:text-center ">
+    <div className=" h-screen bg-[#2F4F4F] overflow-auto">
+      <div className="sm:text-center text-white ">
         <Header onAdd={() => setShowAddEvent(!showAddEvent)} />
       </div>
       {showAddEvent && <AddEvent onAdd={addEvent} />}
-      <div className="mx-auto h-[400px] w-[500px] flex justify-center items-center bg-blue-500 relative p-[10px]">
-        <div className="static ...">
-          <div className="inline-block ...">
+      <div className="mx-auto h-[800px] w-[1000px] flex-center bg-[#708090] relative p-[10px]">
+        <div className="grid grid-cols-3">
+          <div className="container ...">
             {events.length > 0 ? (
               <Pending
                 events={events}
@@ -77,14 +83,14 @@ export const Items = () => {
               "No events to show"
             )}
           </div>
-          <div className="inline-block ...">
+          <div className="container ...">
             <ToDo
               events={events}
               statusUpdate={statusUpdate}
               setEvents={setEvents}
             />
           </div>
-          <div className="inline-block ...">
+          <div className="container ...">
             <Completed
               events={events}
               statusUpdate={statusUpdate}
