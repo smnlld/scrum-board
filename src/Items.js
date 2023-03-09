@@ -12,20 +12,20 @@ export const Items = () => {
   const [events, setEvents] = useState([
     {
       id: 1,
-      title: "Event 1",
-      description: "This is the first event",
+      title: "Study Basic JS",
+      description: "This is for to excell in React",
       status: "Pending",
     },
     {
       id: 2,
-      title: "Event 2",
-      description: "This is the second event",
+      title: "Accomplish tasks",
+      description: "Accomplish all the tasks on time",
       status: "Pending",
     },
     {
       id: 3,
-      title: "Event 3",
-      description: "This is the third event",
+      title: "Study Tailwind css and Graphs",
+      description: "To implent to the Task",
       status: "Pending",
     },
   ]);
