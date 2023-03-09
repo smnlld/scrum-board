@@ -19,30 +19,39 @@ export const AddEvent = ({ onAdd }) => {
   return (
     <form
       onSubmit={onSubmit}
-      className="md:container items-center border border-blue-50 mx-auto w-0 text-align-center "
+      className="box-content w-[450px] items-center border-2 border- mx-auto bg-[#51557E] my-6 "
     >
-      <div className="">
-        <div className="">
-          <label>TITLE</label>
+      <div className="my-2 mx-4 justify-center ">
+        <div className="px-4">
+          <label className="mx-4 font-sans font-bold text-lg text-white">
+            TITLE:
+          </label>
           <input
+            className="rounded w-50 text-center ml-20 "
             type="text"
-            placeholder=" Add Title of Event "
+            placeholder=" Event Title "
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div className="form-body">
-          <label>Description</label>
+        <div className="px-4">
+          <label className="mx-4 font-sans text-lg font-bold text-white">
+            Description:
+          </label>
           <input
+            className="rounded w-50 text-center ml-7 "
             type="text"
-            placeholder=" Add Description of Event "
+            placeholder=" Descrition "
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
-        <div className="form-body">
-          <label>Status</label>
+        <div className="px-4">
+          <label className="mx-4 font-sans text-lg font-bold text-white">
+            Status:
+          </label>
           <input
+            className="rounded w-50 text-center mx-16 font-bold tracking-widest text-black bg-gray-300  "
             type="text"
             placeholder="PENDING"
             readOnly={true}
@@ -50,7 +59,11 @@ export const AddEvent = ({ onAdd }) => {
             onChange={(e) => setStatus(e.target.value)}
           />
         </div>
-        <input type="submit" value="Save Event" className="btn-submit" />
+        <input
+          type="submit"
+          value="Save Event"
+          className="bg-green-600 hover:bg-green-300 tracking-widest w-full text-white font-bold py-2 px-4 my-2  rounded-lg"
+        />
       </div>
     </form>
   );
